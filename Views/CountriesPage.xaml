@@ -3,10 +3,68 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PMT21RestCountry.Views.CountriesPage"
              Title="CountriesPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <ContentPage.Resources>
+        <Style x:Key="CountryLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="TextColor" Value="#333333"/>
+            <Setter Property="Margin" Value="5,0"/>
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <!--<SearchBar x:Name="SearchBar" Placeholder="Buscar..." TextChanged="SearchBar_TextChanged" Margin="0,0,0,10"/>-->
+
+            <CollectionView x:Name="Countries"
+                     SelectionMode="Single"
+                     SelectionChanged="Countries_SelectionChanged"
+                     ItemsLayout="VerticalList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+                        Padding="10"
+                        HasShadow="True"
+                        BackgroundColor="#FAF6F0"
+                        BorderColor="#dddddd">
+                            <!--<Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="" CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>-->
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Frame HeightRequest="40"
+                                WidthRequest="40"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                IsClippedToBounds="True"
+                                Padding="0"
+                                BorderColor="Black"
+                                Margin="0">
+                                    <Image Grid.Column="0"
+                                    x:Name="Imagen"
+                                    Source="{Binding Imagen, Converter={StaticResource BaseString}}"
+                                    Aspect="AspectFill"
+                                    HeightRequest="40"
+                                    WidthRequest="40"/>
+                                </Frame>
+                                <StackLayout Grid.Column="1"
+                                      VerticalOptions="Center"
+                                      Padding="10,0">
+                                    <Label Text="{Binding name}"
+                                    Style="{StaticResource CountryLabelStyle}"
+                                    FontAttributes="Bold"/>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
