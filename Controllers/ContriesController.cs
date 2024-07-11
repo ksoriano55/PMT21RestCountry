@@ -6,7 +6,7 @@ namespace PMT21RestCountry.Controllers
     public class ContriesController
     {
         //GetCountries
-        public async static Task<List<Countries>> GetCountries()
+        public async static Task<List<Countries>> GetCountries(string region = "America")
         {
             List<Countries> countries = new List<Countries>();
             try
@@ -14,7 +14,7 @@ namespace PMT21RestCountry.Controllers
                 using (HttpClient client = new HttpClient())
                 {
                     HttpResponseMessage response = null;
-                    response = await client.GetAsync("http://api.countrylayer.com/v2/region/america?access_key=70d24777ce71f44c0d7971ed24c5656f");
+                    response = await client.GetAsync("https://restcountries.com/v3.1/region/" + region);
 
                     if (response != null)
                     {
@@ -24,7 +24,7 @@ namespace PMT21RestCountry.Controllers
                             try
                             {
                                 var jsonResult = JsonConvert.DeserializeObject<List<Countries>>(result);
-                                if(jsonResult != null)
+                                if (jsonResult != null)
                                 {
                                     countries.AddRange(jsonResult);
                                 }

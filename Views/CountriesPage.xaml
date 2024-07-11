@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PMT21RestCountry.Views.CountriesPage"
-             Title="CountriesPage">
+             Title="Listado de Paises">
 
     <ContentPage.Resources>
         <Style x:Key="CountryLabelStyle" TargetType="Label">
@@ -13,7 +13,9 @@
     </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout Padding="10">
-            <!--<SearchBar x:Name="SearchBar" Placeholder="Buscar..." TextChanged="SearchBar_TextChanged" Margin="0,0,0,10"/>-->
+            <Picker x:Name="regions"
+                Title="Continentes"
+                ItemsSource="{Binding Options}" />
 
             <CollectionView x:Name="Countries"
                      SelectionMode="Single"
@@ -26,9 +28,6 @@
                         HasShadow="True"
                         BackgroundColor="#FAF6F0"
                         BorderColor="#dddddd">
-                            <!--<Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="" CommandParameter="{Binding .}" />
-                        </Frame.GestureRecognizers>-->
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -48,7 +47,7 @@
                                 Margin="0">
                                     <Image Grid.Column="0"
                                     x:Name="Imagen"
-                                    Source="{Binding Imagen, Converter={StaticResource BaseString}}"
+                                    Source="{Binding flags.png}"
                                     Aspect="AspectFill"
                                     HeightRequest="40"
                                     WidthRequest="40"/>
@@ -56,7 +55,7 @@
                                 <StackLayout Grid.Column="1"
                                       VerticalOptions="Center"
                                       Padding="10,0">
-                                    <Label Text="{Binding name}"
+                                    <Label Text="{Binding name.official}"
                                     Style="{StaticResource CountryLabelStyle}"
                                     FontAttributes="Bold"/>
                                 </StackLayout>
