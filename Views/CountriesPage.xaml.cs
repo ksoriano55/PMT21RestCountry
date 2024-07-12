@@ -1,3 +1,4 @@
+using PMT21RestCountry.Models;
 using System.Collections.ObjectModel;
 
 namespace PMT21RestCountry.Views;
@@ -43,6 +44,23 @@ public partial class CountriesPage : ContentPage
 
     private void Countries_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        var hola = "hola";
+    }
 
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        var frame = sender as Frame;
+        if (frame == null)
+            return;
+
+        var countrie = frame.BindingContext as Countries;
+        VerInformacion(countrie);
+    }
+
+    private void VerInformacion(Countries countries)
+    {
+        SelectedOption = SelectedOption == null ? "America" : SelectedOption;
+        CountrieMapPage countrieMapPage = new CountrieMapPage(SelectedOption, countries.name.official);
+        Navigation.PushAsync(countrieMapPage);
     }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PMT21RestCountry.Views.CountrieInfoPage"
+             Title="CountrieInfoPage">
+
+    <ContentPage.Content>
+        <!--<Label 
+ Text="Latitud"
+ VerticalOptions="Start" 
+ HorizontalOptions="Start" 
+ Margin="20,20,20,0"/>
+        <Entry 
+ Text="" 
+ MaxLength="100"
+ x:Name="Latitud" 
+ Keyboard="Text" 
+ IsEnabled="False"
+ Margin="20,0,20,0"/>
+
+        <Label 
+Text="Longitud"
+VerticalOptions="Start" 
+HorizontalOptions="Start" 
+Margin="20,20,20,0"/>-->
+
+        <WebView x:Name="mapWebView"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand" />
+    </ContentPage.Content>
+
+</ContentPage>

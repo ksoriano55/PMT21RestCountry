@@ -11,6 +11,9 @@
             <Setter Property="Margin" Value="5,0"/>
         </Style>
     </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="-"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ScrollView>
         <VerticalStackLayout Padding="10">
             <Picker x:Name="regions"
@@ -28,6 +31,9 @@
                         HasShadow="True"
                         BackgroundColor="#FAF6F0"
                         BorderColor="#dddddd">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding .}" />
+                            </Frame.GestureRecognizers>
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>

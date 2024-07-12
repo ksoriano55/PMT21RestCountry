@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PMT21RestCountry.Views.CountrieMapPage"
+             HeightRequest="5"
+             x:Name="nameCommon">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <Grid Padding="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" x:Name="FlagImage"
+                    HeightRequest="80"
+                    HorizontalOptions="Center" />
+                <Image Grid.Column="1" x:Name="CoatOfArmsImage"
+                    HeightRequest="80"
+                    HorizontalOptions="Center" />
+                
+                
+            </Grid>
+            <Label Text="Oficial:"
+                FontAttributes="Bold" />
+            <Label x:Name="nameOfficial" Padding="0, 0, 0, 10"/>
+            
+            <Label Text="Moneda:"
+                    FontAttributes="Bold" />
+            <Label x:Name="CurrencyLabel" Padding="0, 0, 0, 10" />
+            
+            <Label Text="Capital:"
+                FontAttributes="Bold" />
+            <Label x:Name="CapitalLabel" Padding="0, 0, 0, 10" />
+
+            <Label Text="Región:"
+                    FontAttributes="Bold" />
+            <Label x:Name="RegionLabel" Padding="0, 0, 0, 10" />
+
+            <Label Text="Subregión:"
+                FontAttributes="Bold" />
+            <Label x:Name="SubregionLabel" Padding="0, 0, 0, 10" />
+
+            <Label Text="Idioma:"
+                FontAttributes="Bold" />
+            <Label x:Name="LangugesLabel" Padding="0, 0, 0, 10" />
+
+            <Label Text="Población:"
+                    FontAttributes="Bold" />
+            <Label x:Name="PopulationLabel" Padding="0, 0, 0, 10" />
+
+            <Label Text="Ubicación:"
+                FontAttributes="Bold" />
+            <Label x:Name="LatLongLabel" Padding="0, 0, 0, 10" />
+
+            <WebView x:Name="GoogleMapsWebView"
+         HeightRequest="400"
+         VerticalOptions="FillAndExpand" />
+            <!--<Image x:Name="FlagImage"
+                   HeightRequest="100"
+                   HorizontalOptions="EndAndExpand" />
+            
+            <Image x:Name="CoatOfArmsImage"
+                   HeightRequest="100"
+                   HorizontalOptions="EndAndExpand" />-->
+            
+            <!--<Label x:Name="CountryNameLabel"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   Text="hola"
+                   HorizontalOptions="Center" />
+            <Label x:Name="OfficialNameLabel"
+                   FontAttributes="Italic"
+                   FontSize="Medium"
+                   HorizontalOptions="Center" />
+            <Label Text="Moneda:"
+                   FontAttributes="Bold" />
+            <Label x:Name="CurrencyLabel" />
+            <Label Text="Capital:"
+                   FontAttributes="Bold" />
+            <Label x:Name="CapitalLabel" />
+            <Label Text="Región:"
+                   FontAttributes="Bold" />
+            <Label x:Name="RegionLabel" />
+            <Label Text="Subregión:"
+                   FontAttributes="Bold" />
+            <Label x:Name="SubregionLabel" />
+            <Label Text="Población:"
+                   FontAttributes="Bold" />
+            <Label x:Name="PopulationLabel" />
+            <Label Text="Lenguaje:"
+                    FontAttributes="Bold" />
+            <Label x:Name="Languages" />
+            <WebView x:Name="GoogleMapsWebView"
+                     HeightRequest="400"
+                     VerticalOptions="FillAndExpand" />-->
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
